@@ -10,5 +10,10 @@ export const routes: Routes = [
   {
     path: 'hero',
     component: HeroPageComponent
+  },
+  // por defecto cuando se ingresa cualquier dirección
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
