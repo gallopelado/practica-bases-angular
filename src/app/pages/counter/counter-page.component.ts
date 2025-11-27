@@ -1,19 +1,13 @@
 import { Component } from "@angular/core";
 
 @Component({
-  template: `
-    <h1>Hi</h1>
-    <h2>CounterComponent Page</h2>
-    <h3>Counter: {{ counter }}</h3>
-    <span>
-      <button (click)="increaseBy()">+1</button>
-    </span>
-    <span>
-      <button (click)="resetCounter()">Reset</button>
-    </span>
-    <span>
-      <button (click)="decreaseBy()">-1</button>
-    </span>
+  templateUrl: './counter-page.component.html',
+  styles: `
+    button {
+      padding: 5px;
+      margin: 5px;
+      width: 10%;
+    }
   `
 })
 export class CounterPageComponent {
