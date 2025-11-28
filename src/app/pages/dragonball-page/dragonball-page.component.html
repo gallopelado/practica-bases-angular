@@ -3,24 +3,40 @@
 
 <section>
 
+  <!-- Formulario de Personaje -->
   <div class="row">
 
-    <div class="col-12 col-sm-6">
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-6">
       <h3>Agregar</h3>
       <input type="text" name="" id="" class="form-control" placeholder="Nombre"/>
       <input type="number" name="" id="" class="form-control mt-2" placeholder="Poder"/>
 
-      <button class="mt-2 btn btn-primary">Agregar</button>
+      <div class="d-grid gap-2">
+        <button class="mt-2 btn btn-primary">Agregar</button>
+      </div>
     </div>
 
-    <div class="col-12 col-sm-6">
-      <h3>Listado</h3>
-      <ol>
-        @for (character of characters();track character.id) {
-          <li>{{ character.name }} <span class="badge bg-{{ showColorLevel(character.power) }}">{{ character.power }}</span></li>
-        }
-      </ol>
-    </div>
+  </div>
+
+  <hr />
+  <!-- Lista de personajes -->
+  <div class="row mt-2">
+
+    @for (character of characters();track character.id) {
+      <div class="col-md-4 col-sm-12">
+        <div class="card" style="width: 100%;">
+          <img src="{{ character.urlImage }}" class="card-img-top css-1f12kxr" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ character.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <span class="badge bg-{{ showColorLevel(character.power) }}">{{ character.power }}</span>
+            </h6>
+            <p class="card-text">Empy description cape</p>
+          </div>
+        </div>
+      </div>
+    }
+
   </div>
 
 </section>
