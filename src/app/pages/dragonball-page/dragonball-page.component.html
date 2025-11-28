@@ -17,7 +17,14 @@
       <h3>Listado</h3>
       <ol>
         @for (character of characters();track character.id) {
-          <li>{{ character.name }} <span class="badge bg-{{ showColorLevel(character.power) }}">{{ character.power }}</span></li>
+          <li>{{ character.name }}
+            <span
+              class="badge"
+              [class.bg-success]="character.power > 9000"
+              [class.bg-warning]="character.power > 8000 && character.power <= 9000"
+              [class.bg-secondary]="character.power <= 8000"
+            >{{ character.power }}</span>
+          </li>
         }
       </ol>
     </div>

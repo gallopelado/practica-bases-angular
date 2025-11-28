@@ -18,14 +18,4 @@ export class DragonballPageComponent {
     { id: 3, name: "Piccolo", power: 7500 }
   ]);
 
-  showColorLevel(power: number): string {
-    if (power > 9000) {
-      return "success";
-    } else if (power > 8000) {
-      return "warning";
-    } else {
-      return "secondary";
-    }
-  }
-
 }
