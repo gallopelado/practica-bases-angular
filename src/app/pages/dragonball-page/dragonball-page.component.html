@@ -8,11 +8,11 @@
 
     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-6">
       <h3>Agregar</h3>
-      <input type="text" name="" id="" class="form-control" placeholder="Nombre"/>
-      <input type="number" name="" id="" class="form-control mt-2" placeholder="Poder"/>
+      <input type="text" class="form-control" placeholder="Nombre" [value]="name()" (change)="name.set(txtName.value)" #txtName />
+      <input type="number" class="form-control mt-2" placeholder="Poder" [value]="power()"  (change)="power.set(+txtPower.value)"  #txtPower/>
 
       <div class="d-grid gap-2">
-        <button class="mt-2 btn btn-primary">Agregar</button>
+        <button class="mt-2 btn btn-primary" (click)="addCharacter()">Agregar</button>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
 
     @for (character of characters();track character.id) {
       <div class="col-md-4 col-sm-12">
-        <div class="card" style="width: 100%;">
+        <div class="card mt-2" style="width: 100%;">
           <img src="{{ character.urlImage }}" class="card-img-top css-1f12kxr" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{ character.name }}</h5>
