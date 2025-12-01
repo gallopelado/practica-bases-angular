@@ -36,14 +36,10 @@ export class DragonballPageComponent {
       urlImage: 'https://www.svgrepo.com/show/493150/person-holding-a-glass-of-milk.svg'
     }
 
-    console.log('Nuevo persona a agregar ' + newCharacter);
-
     this.characters.update( currentCharacteres => [
       ...currentCharacteres,
       newCharacter
     ]);
-
-    console.log('Colección actualizada: ', this.characters());
 
     // limpiar formulario
     this.name.set('');
