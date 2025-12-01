@@ -1,0 +1,15 @@
+<h3>{{ listadoPersonaje() }}</h3>
+@for (character of characters();track character.id) {
+      <div class="col-md-4 col-sm-12">
+        <div class="card mt-2" style="width: 100%;">
+          <img src="{{ character.urlImage }}" class="card-img-top css-1f12kxr" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ character.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <span class="badge bg-{{ showColorByLevel(character.power) }}">{{ character.power }}</span>
+            </h6>
+            <p class="card-text">Empy description cape</p>
+          </div>
+        </div>
+      </div>
+    }
