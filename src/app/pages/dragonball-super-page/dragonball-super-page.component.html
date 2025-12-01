@@ -6,14 +6,14 @@
   <!-- Formulario de Personaje -->
   <div class="row">
     <dragonball-character-add
-      (newCharacter)="addCharacter($event)" />
+      (newCharacter)="dragonballService.addCharacter($event)" />
   </div>
 
   <hr />
   <!-- Lista de personajes -->
   <div class="row mt-2">
     <dragonball-character-list
-      [characters]="characters()"
+      [characters]="dragonballService.characters()"
       listadoPersonaje="Lista de Personajes" />
   </div>
 
